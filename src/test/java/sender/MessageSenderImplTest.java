@@ -23,7 +23,7 @@ public class MessageSenderImplTest {
     @CsvSource(value = {"172.202.203.200, 'Добро пожаловать'", "96.202.203.200, Welkome"})
     public void parameterMessage(String ip, String msg){
         GeoService geoService = Mockito.mock(GeoServiceImpl.class);
-        Mockito.when(geoService.byIp(Mockito.any(String.class))).thenReturn(Mockito.any(Location.class));
+        Mockito.when(geoService.byIp("172.202.203.200")).thenReturn(new Location("Moscow", Country.RUSSIA, "Lenina", 15));
 
         LocalizationService lsi = Mockito.mock(LocalizationServiceImpl.class);
         Mockito.when(lsi.locale(Mockito.any(Country.class))).thenReturn(msg);
