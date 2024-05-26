@@ -60,17 +60,17 @@ public class GeoServiceTest<assertEquals> {
             Location locationOriginal = new Location(city, Country.valueOf(country), street, building);
         }
 
+        boolean b = false;
 
-
-//        if (city.equals(location.getCity()) && (Country.valueOf(country)).equals(location.getCountry()) && street.equals(location.getStreet()) && building == location.getBuiling()) {
-//
-//        }
+        if (city.equals(location.getCity()) && (Country.valueOf(country)).equals(location.getCountry()) && street.equals(location.getStreet()) && building == location.getBuiling()) {
+                b=true;
+        }
 
 
 //        String cityRes = location.getCity();
 //        Assertions.assertEquals(locationExpected, locationOriginal);
-        boolean b = true;
-//        Assertions.assertTrue(b);
+        
+       Assertions.assertTrue(b);
 
 //        Assertions.assertEquals("A", "A");
 //        Assertions.assertEquals("C", "C");
