@@ -44,6 +44,7 @@ public class GeoServiceTest<assertEquals> {
 //    void testLocation(String ipRes, String city){
         GeoService geoService = new GeoServiceImpl();
         Location locationExpected = geoService.byIp(ipRes);
+        Location locationOriginal;
 
 
 //        LocalizationService localizationService = new LocalizationServiceImpl();
@@ -55,14 +56,14 @@ public class GeoServiceTest<assertEquals> {
         }
         if (country == "null") {
             country = null;
-            Location locationOriginal = new Location(city, null, street, building);
+            locationOriginal = new Location(city, null, street, building);
         }else{
-            Location locationOriginal = new Location(city, Country.valueOf(country), street, building);
+            locationOriginal = new Location(city, Country.valueOf(country), street, building);
         }
 
         boolean b = false;
 
-        if (city.equals(location.getCity()) && (Country.valueOf(country)).equals(location.getCountry()) && street.equals(location.getStreet()) && building == location.getBuiling()) {
+        if (city.equals(locationOriginal.getCity()) && (Country.valueOf(country)).equals(locationOriginal.getCountry()) && street.equals(locationOriginal.getStreet()) && building == locationOriginal.getBuiling()) {
                 b=true;
         }
 
